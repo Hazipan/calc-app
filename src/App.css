@@ -1,6 +1,78 @@
-.test {
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+html {
+  display: block;
+  padding: none;
+  margin: none;
+  font-size: 32px;
+  font-family: "League Spartan", sans-serif;
+  font-weight: 700;
+}
+html .app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+html .app .calc {
   width: 500px;
-  height: 500px;
+}
+html .app .calc .header {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+html .app .calc .header .title {
+  font-size: 18px;
+}
+html .app .calc .header .themeSwitch {
+  font-size: 11px;
+  height: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 15px;
+}
+html .app .calc .header .themeSwitch .themeLabel {
+  margin-top: 23px;
+}
+html .app .calc .screen {
+  border-radius: 5px;
+  font-size: 48px;
+  height: 2em;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 20px 0px;
+}
+html .app .calc .keypad {
+  height: 350px;
+  border-radius: 5px;
+  padding: 25px;
+  display: grid;
+  grid-template-areas: "key key key key" "key key key key" "key key key key" "key key key key" "reset reset equals equals";
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+  gap: 15px;
+}
+html .app .calc .keypad .key {
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  font-size: 32px;
+  font-weight: 700;
+}
+html .app .calc .keypad .reset {
+  grid-area: reset;
+}
+html .app .calc .keypad .equals {
+  grid-area: equals;
 }
 
 /*# sourceMappingURL=App.css.map */

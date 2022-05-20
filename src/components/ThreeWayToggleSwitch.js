@@ -12,7 +12,6 @@ const ThreeWayToggleSwitch = (props) => {
       <div className="switch">
         <div className="indicator left" id="indicator" />
       </div>
-      <p>{props.position}</p>
     </div>
   );
 }

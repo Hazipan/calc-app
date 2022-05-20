@@ -1,4 +1,90 @@
-.test {
-    width: 500px;
-    height: 500px;
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+
+$desktopWidth: 500px;
+$mobileWidth: 300px;
+
+@mixin flexDisplay($direction, $justify, $align) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+@mixin grid() {
+    display: grid;
+    grid-template-areas: 'key key key key' 'key key key key' 'key key key key' 'key key key key' 'reset reset equals equals';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 15px;
+}
+
+html {
+    display: block;
+    padding: none;
+    margin: none;
+    font-size: 32px;
+    font-family: 'League Spartan', sans-serif;
+    font-weight: 700;
+
+    .app {
+        @include flexDisplay(column, center, center);
+        height: 100vh;
+
+        .calc {
+            width: $desktopWidth;
+
+            .header {
+                width: $desktopWidth;
+                @include flexDisplay(row, space-between, center);
+
+                .title {
+                    font-size: 18px;
+                }
+
+                .themeSwitch {
+                    font-size: 11px;
+                    height: 20px;
+                    @include flexDisplay(row, flex-start, flex-start);
+                    gap: 15px;
+
+                    .themeLabel {
+                        margin-top: 23px;
+                    }
+                }
+            }
+
+            .screen {
+                border-radius: 5px;
+                font-size: 48px;
+                height: 2em;
+                padding-right: 10px;
+                @include flexDisplay(row, flex-end, center);
+                margin: 20px 0px;
+            }
+
+            .keypad {
+                height: 350px;
+                border-radius: 5px;
+                padding: 25px;
+                @include grid;
+
+                .key {
+                    height: 50px;
+                    border: none;
+                    border-radius: 10px;
+                    font-size: 32px;
+                    font-weight: 700;
+                }
+
+                .reset {
+                    grid-area: reset;
+                }
+
+                .equals {
+                    grid-area: equals;
+                }
+            }
+        }
+    }
 }
