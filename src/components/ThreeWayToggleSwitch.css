@@ -1,0 +1,45 @@
+.toggleSwitch {
+    width: 6em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.toggleSwitch:hover {
+    cursor: pointer;
+}
+
+.label {
+    display: flex;
+    gap: .8em;
+    line-height: 0;
+}
+
+.switch {
+    width: 4.2em;
+    height: 1.5em;
+    border-radius: 1em;
+    background-color: lightgray;
+    position: relative;
+}
+
+.indicator {
+    width: .9em;
+    height: .9em;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: .3em;
+}
+
+.left {
+    left: .4em;
+}
+
+.center {
+    left: 1.7em;
+}
+
+.right {
+    right: .4em;
+}
