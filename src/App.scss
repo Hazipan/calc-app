@@ -1,7 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
 
-$desktopWidth: 500px;
-$mobileWidth: 300px;
+$desktopWidth: 90vw;
+
+/* color themes for buttons */
+/* button colors theme1 */
+.theme1Key {
+    background-color: hsl(30, 25%, 89%);
+    box-shadow: 0 4px hsl(28, 16%, 65%);
+    color: hsl(221, 14%, 31%);
+}
+.theme1Key:hover {background-color: hsl(30, 25%, 99%);}
+.theme1Equals {
+    background-color: hsl(6, 63%, 50%);
+    box-shadow: 0 4px hsl(6, 70%, 34%);
+    color: white;
+}
+.theme1Equals:hover {background-color: hsl(6, 63%, 60%);}
+.theme1Reset {
+    background-color: hsl(225, 21%, 49%);
+    box-shadow: 0 4px hsl(224, 28%, 49%);
+    color: white;
+}
+.theme1Reset:hover {background-color: hsl(224, 28%, 59%);}
+
+/* button colors theme2 */
+.theme2Key {
+    background-color: hsl(45, 7%, 89%);
+    box-shadow: 0 4px hsl(35, 11%, 61%);
+    color: hsl(60, 10%, 19%);
+}
+.theme2Key:hover {background-color: hsl(45, 7%, 99%);}
+.theme2Equals {
+    background-color: hsl(6, 63%, 50%);
+    box-shadow: 0 4px hsl(6, 99%, 27%);
+    color: white;
+}
+.theme2Equals:hover {background-color: hsl(6, 63%, 60%);}
+.theme2Reset {
+    background-color: hsl(185, 42%, 37%);
+    box-shadow: 0 4px hsl(185, 58%, 25%);
+    color: white;
+}
+.theme2Reset:hover {background-color: hsl(185, 42%, 47%);}
+
+/* button colors theme3 */
+.theme3Key {
+    background-color: hsl(268, 47%, 21%);
+    box-shadow: 0 4px hsl(290, 60%, 36%);
+    color: hsl(52, 100%, 62%);
+}
+.theme3Key:hover {background-color: hsl(268, 47%, 31%);}
+.theme3Equals {
+    background-color: hsl(176, 100%, 44%);
+    box-shadow: 0 4px hsl(177, 92%, 70%);
+    color: hsl(198, 20%, 12%);
+}
+.theme3Equals:hover {background-color: hsl(176, 100%, 54%);}
+.theme3Reset {
+    background-color: hsl(281, 89%, 26%);
+    box-shadow: 0 4px hsl(285, 91%, 52%);
+    color: white;
+}
+.theme3Reset:hover {background-color: hsl(281, 89%, 36%);}
 
 @mixin flexDisplay($direction, $justify, $align) {
     display: flex;
@@ -33,9 +93,13 @@ html {
 
         .calc {
             width: $desktopWidth;
+            max-width: 500px;
+            min-width: 300px;
 
             .header {
                 width: $desktopWidth;
+                max-width: 500px;
+                min-width: 300px;
                 @include flexDisplay(row, space-between, center);
 
                 .title {
@@ -77,12 +141,22 @@ html {
                     font-weight: 700;
                 }
 
+                .key:hover {
+                    cursor: pointer;
+                }
+
                 .reset {
                     grid-area: reset;
+                    font-size: 24px;
                 }
 
                 .equals {
                     grid-area: equals;
+                    font-size: 24px;
+                }
+
+                .delete {
+                    font-size: 24px;
                 }
             }
         }

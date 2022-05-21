@@ -9,12 +9,11 @@ const ThreeWayToggleSwitch = (props) => {
         <p>2</p>
         <p>3</p>
       </div>
-      <div className="switch">
-        <div className="indicator left" id="indicator" />
+      <div className={props.switchClass + ' switch'}>
+        <div className={props.indicatorClass + ' indicator'} />
       </div>
     </div>
   );
 }
-
 
 export default ThreeWayToggleSwitch;

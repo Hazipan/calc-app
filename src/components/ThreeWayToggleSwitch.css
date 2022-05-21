@@ -1,3 +1,16 @@
+/* color themes for toggle switch */
+/* theme 1 */
+.theme1Switch {background-color: hsl(223, 31%, 20%);}
+.theme1Indicator {background-color: hsl(6, 63%, 50%);}
+
+/* theme 2 */
+.theme2Switch {background-color: hsl(0, 5%, 81%);}
+.theme2Indicator {background-color: hsl(25, 98%, 40%);}
+
+/* theme 3 */
+.theme3Switch {background-color: hsl(268, 71%, 12%);}
+.theme3Indicator {background-color: hsl(176, 100%, 44%);}
+
 .toggleSwitch {
     width: 6em;
     display: flex;
@@ -19,7 +32,6 @@
     width: 4.2em;
     height: 1.5em;
     border-radius: 1em;
-    background-color: lightgray;
     position: relative;
 }
 
@@ -27,7 +39,6 @@
     width: .9em;
     height: .9em;
     border-radius: 50%;
-    background-color: white;
     position: absolute;
     top: .3em;
 }

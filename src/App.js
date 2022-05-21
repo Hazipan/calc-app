@@ -16,59 +16,65 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // position state for three way switch
+      // position is for the three way switch
       position: 1,
       theme: theme1,
-      headerColor: theme1.secondaryText
+      headerColor: theme1.secondaryText,
+      keyClass: 'theme1Key key',
+      resetClass: 'theme1Reset key',
+      equalsClass: 'theme1Equals key',
+      switchClass: 'theme1Switch',
+      indicatorClass: 'theme1Indicator left'
     }
     this.switchClick = this.switchClick.bind(this);
   }
 
   // Functions to handle switch click event
-  // Change position to 1, 2, or 3 according to previous position
+  // Change theme to 1, 2, or 3 according to previous position
   switchClick() {
-    console.log("switch registered")
     switch (this.state.position) {
+      // if at theme 1, set to theme 2
       case 1:
         this.setState({
           position: 2,
           theme: theme2,
-          headerColor: theme2.mainText
+          headerColor: theme2.mainText,
+          keyClass: 'theme2Key key',
+          resetClass: 'theme2Reset key',
+          equalsClass: 'theme2Equals key',
+          switchClass: 'theme2Switch',
+          indicatorClass: 'theme2Indicator center'
         });
         break;
+      // if at theme 2, set to theme 3
       case 2:
         this.setState({
           position: 3,
           theme: theme3,
-          headerColor: theme3.mainText
+          headerColor: theme3.mainText,
+          keyClass: 'theme3Key key',
+          resetClass: 'theme3Reset key',
+          equalsClass: 'theme3Equals key',
+          switchClass: 'theme3Switch',
+          indicatorClass: 'theme3Indicator right'
         });
         break;
+      // if at theme 3, set to theme 1
       case 3:
         this.setState({
           position: 1,
           theme: theme1,
-          headerColor: theme1.secondaryText
+          headerColor: theme1.secondaryText,
+          keyClass: 'theme1Key key',
+          resetClass: 'theme1Reset key',
+          equalsClass: 'theme1Equals key',
+          switchClass: 'theme1Switch',
+          indicatorClass: 'theme1Indicator left'
         });
         break;
     }
-    // Once position in state is changed, change position visually
-    let indicator = document.getElementById('indicator');
-    switch (this.state.position) {
-      case 1:
-        indicator.classList.remove('left');
-        indicator.classList.add('center');
-        break;
-      case 2:
-        indicator.classList.remove('center');
-        indicator.classList.add('right');
-        break;
-      case 3:
-        indicator.classList.remove('right');
-        indicator.classList.add('left');
-        break;
-    }
 
-    console.log('switch position changed');
+    console.log('color theme changed');
   }
 
   keyClick() {
@@ -77,6 +83,7 @@ class App extends React.Component {
 
   render() {
     // Style colors change depedning on state of theme
+    // To be able to have hover states on the buttons, their classes are outlined in App.scss
     const theme = {
       app: {
         backgroundColor: this.state.theme.mainBackground,
@@ -91,21 +98,6 @@ class App extends React.Component {
       screen: {
         backgroundColor: this.state.theme.screenBackground,
         color: this.state.headerColor,
-      },
-      key: {
-        backgroundColor: this.state.theme.mainKeysBackground,
-        color: this.state.theme.mainText,
-        boxShadow: `0 4px ${this.state.theme.mainKeysShadow}`
-      },
-      equals: {
-        backgroundColor: this.state.theme.equalsBackground,
-        color: this.state.theme.tertiaryText,
-        boxShadow: `0 4px ${this.state.theme.equalsShadow}`
-      },
-      resetDel: {
-        backgroundColor: this.state.theme.resetDeleteBackground,
-        color: this.state.theme.secondaryText,
-        boxShadow: `0 4px ${this.state.theme.resetDeleteShadow}`
       }
     }
     return (
@@ -115,20 +107,25 @@ class App extends React.Component {
             <p className='title'>calc</p>
             <div className='themeSwitch'>
               <p className="themeLabel">THEME</p>
-              <ThreeWayToggleSwitch position={this.state.position} onClick={this.switchClick} />
+              <ThreeWayToggleSwitch
+                position={this.state.position} 
+                onClick={this.switchClick}
+                switchClass={this.state.switchClass}
+                indicatorClass={this.state.indicatorClass}
+              />
             </div>
           </div>
-          <p className='screen' style={theme.screen}>{100}</p>
+          <p className='screen' style={theme.screen}>{10}</p>
           <div className='keypad' style={theme.keypad}>
             {keyValues.flat().map((btn, i) => {
               return (
                 <Key
                   key={i}
                   value={btn}
-                  className={btn === "=" ? "equals key"
-                    : btn === 'RESET' ? "reset key"
-                      : btn === "DEL" ? 'delete key'
-                        : 'key'}
+                  className={btn === "=" ? this.state.equalsClass + ' equals'
+                    : btn === 'RESET' ? this.state.resetClass + ' reset'
+                      : btn === "DEL" ? this.state.resetClass + ' delete'
+                        : this.state.keyClass}
                   onClick={this.keyClick}
                   style={
                     btn === '=' ? theme.equals

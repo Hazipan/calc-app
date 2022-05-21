@@ -1,4 +1,98 @@
 @import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+/* color themes for buttons */
+/* button colors theme1 */
+.theme1Key {
+  background-color: hsl(30deg, 25%, 89%);
+  box-shadow: 0 4px hsl(28deg, 16%, 65%);
+  color: hsl(221deg, 14%, 31%);
+}
+
+.theme1Key:hover {
+  background-color: hsl(30deg, 25%, 99%);
+}
+
+.theme1Equals {
+  background-color: hsl(6deg, 63%, 50%);
+  box-shadow: 0 4px hsl(6deg, 70%, 34%);
+  color: white;
+}
+
+.theme1Equals:hover {
+  background-color: hsl(6deg, 63%, 60%);
+}
+
+.theme1Reset {
+  background-color: hsl(225deg, 21%, 49%);
+  box-shadow: 0 4px hsl(224deg, 28%, 49%);
+  color: white;
+}
+
+.theme1Reset:hover {
+  background-color: hsl(224deg, 28%, 59%);
+}
+
+/* button colors theme2 */
+.theme2Key {
+  background-color: hsl(45deg, 7%, 89%);
+  box-shadow: 0 4px hsl(35deg, 11%, 61%);
+  color: hsl(60deg, 10%, 19%);
+}
+
+.theme2Key:hover {
+  background-color: hsl(45deg, 7%, 99%);
+}
+
+.theme2Equals {
+  background-color: hsl(6deg, 63%, 50%);
+  box-shadow: 0 4px hsl(6deg, 99%, 27%);
+  color: white;
+}
+
+.theme2Equals:hover {
+  background-color: hsl(6deg, 63%, 60%);
+}
+
+.theme2Reset {
+  background-color: hsl(185deg, 42%, 37%);
+  box-shadow: 0 4px hsl(185deg, 58%, 25%);
+  color: white;
+}
+
+.theme2Reset:hover {
+  background-color: hsl(185deg, 42%, 47%);
+}
+
+/* button colors theme3 */
+.theme3Key {
+  background-color: hsl(268deg, 47%, 21%);
+  box-shadow: 0 4px hsl(290deg, 60%, 36%);
+  color: hsl(52deg, 100%, 62%);
+}
+
+.theme3Key:hover {
+  background-color: hsl(268deg, 47%, 31%);
+}
+
+.theme3Equals {
+  background-color: hsl(176deg, 100%, 44%);
+  box-shadow: 0 4px hsl(177deg, 92%, 70%);
+  color: hsl(198deg, 20%, 12%);
+}
+
+.theme3Equals:hover {
+  background-color: hsl(176deg, 100%, 54%);
+}
+
+.theme3Reset {
+  background-color: hsl(281deg, 89%, 26%);
+  box-shadow: 0 4px hsl(285deg, 91%, 52%);
+  color: white;
+}
+
+.theme3Reset:hover {
+  background-color: hsl(281deg, 89%, 36%);
+}
+
 html {
   display: block;
   padding: none;
@@ -15,10 +109,14 @@ html .app {
   height: 100vh;
 }
 html .app .calc {
-  width: 500px;
+  width: 90vw;
+  max-width: 500px;
+  min-width: 300px;
 }
 html .app .calc .header {
-  width: 500px;
+  width: 90vw;
+  max-width: 500px;
+  min-width: 300px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -68,11 +166,19 @@ html .app .calc .keypad .key {
   font-size: 32px;
   font-weight: 700;
 }
+html .app .calc .keypad .key:hover {
+  cursor: pointer;
+}
 html .app .calc .keypad .reset {
   grid-area: reset;
+  font-size: 24px;
 }
 html .app .calc .keypad .equals {
   grid-area: equals;
+  font-size: 24px;
+}
+html .app .calc .keypad .delete {
+  font-size: 24px;
 }
 
 /*# sourceMappingURL=App.css.map */
