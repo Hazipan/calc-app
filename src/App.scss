@@ -90,6 +90,7 @@ html {
     .app {
         @include flexDisplay(column, center, center);
         height: 100vh;
+        position: relative;
 
         .calc {
             width: $desktopWidth;

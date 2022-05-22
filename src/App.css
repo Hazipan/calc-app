@@ -107,6 +107,7 @@ html .app {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  position: relative;
 }
 html .app .calc {
   width: 90vw;
