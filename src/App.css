@@ -140,7 +140,7 @@ html .app .calc .header .themeSwitch .themeLabel {
 html .app .calc .screen {
   border-radius: 5px;
   font-size: 48px;
-  height: 2em;
+  height: 96px;
   padding-right: 10px;
   display: flex;
   flex-direction: row;
