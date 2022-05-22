@@ -93,7 +93,7 @@ class App extends React.Component {
     const result = this.state.result;
 
     if (sign && number) {
-      const math = (a, b, sign) => 
+      const math = (a, b, sign) =>
         sign === '+' ? a + b
           : sign === '-' ? a - b
             : sign === 'x' ? a * b
@@ -107,7 +107,7 @@ class App extends React.Component {
             // calculate result and number using sign
             : math(Number(result), Number(number), sign),
         // reset sign and number
-        sign: ''        
+        sign: ''
       })
     }
   }
@@ -115,7 +115,7 @@ class App extends React.Component {
   delClick() {
     const number = this.state.number;
     const arr = [];
-    for(let i = 0; i < number.length - 1; i++){
+    for (let i = 0; i < number.length - 1; i++) {
       arr.push(number[i]);
     }
     const newNumber = arr.join('');
@@ -167,7 +167,7 @@ class App extends React.Component {
     // Do not let number exceed 15 characters
     if (number.length < 16) {
       this.setState({
-        number: 
+        number:
           // if number and value both equal 0, return just 0
           number === '0' && value === '0' ? "0"
             // if number is a whole number, concat number and value and return as a number
@@ -245,6 +245,9 @@ class App extends React.Component {
               )
             })}
           </div>
+          <footer>
+            <p className='attribution' style={theme.header}>Challenge by <a href="https://www.frontendmentor.io/" style={theme.header}>Front End Mentor</a>. Coded by <a href='https://www.frontendmentor.io/profile/Hazipan' style={theme.header}>Aaron Rutherford</a><br /><a href="https://github.com/Hazipan/calc-app" style={theme.header}>See the Code!</a></p>
+          </footer>
         </div>
       </div>
     );

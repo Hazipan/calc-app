@@ -124,6 +124,7 @@ html .app .calc .header {
 }
 html .app .calc .header .title {
   font-size: 18px;
+  margin: 40px 0 0 0;
 }
 html .app .calc .header .themeSwitch {
   font-size: 11px;
@@ -171,14 +172,23 @@ html .app .calc .keypad .key:hover {
 }
 html .app .calc .keypad .reset {
   grid-area: reset;
-  font-size: 24px;
+  font-size: 20px;
 }
 html .app .calc .keypad .equals {
   grid-area: equals;
   font-size: 24px;
 }
 html .app .calc .keypad .delete {
-  font-size: 24px;
+  font-size: 20px;
+}
+html .app .attribution {
+  position: absolute;
+  text-align: center;
+  bottom: 5px;
+  width: 90%;
+  max-width: 500px;
+  min-width: 300px;
+  font-size: 8px;
 }
 
 /*# sourceMappingURL=App.css.map */

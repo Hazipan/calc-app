@@ -104,6 +104,7 @@ html {
 
                 .title {
                     font-size: 18px;
+                    margin: 40px 0 0 0;
                 }
 
                 .themeSwitch {
@@ -147,7 +148,7 @@ html {
 
                 .reset {
                     grid-area: reset;
-                    font-size: 24px;
+                    font-size: 20px;
                 }
 
                 .equals {
@@ -156,9 +157,19 @@ html {
                 }
 
                 .delete {
-                    font-size: 24px;
+                    font-size: 20px;
                 }
             }
+        }
+
+        .attribution {
+            position: absolute;
+            text-align: center;
+            bottom: 5px;
+            width: 90%;
+            max-width: 500px;
+            min-width: 300px;
+            font-size: 8px;
         }
     }
 }
